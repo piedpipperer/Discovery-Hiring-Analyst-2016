@@ -25,14 +25,14 @@ You must create a **reproducible report**\* answering the following questions:
 
 ## Data
 
-The dataset comes from an [EL schema](3) that we use for assessing user satisfaction. Desktop users are randomly sampled to be anonymously tracked by this schema which uses a "I'm alive" pinging system that we can use to estimate how long our users stay on the pages they visit. The dataset contains just a little more than a week of EL data.
+The dataset comes from a [tracking schema](3) that we use for assessing user satisfaction. Desktop users are randomly sampled to be anonymously tracked by this schema which uses a "I'm alive" pinging system that we can use to estimate how long our users stay on the pages they visit. The dataset contains just a little more than a week of EL data.
 
 | Column          | Value   | Description                                                                       |
 |:----------------|:--------|:----------------------------------------------------------------------------------|
 | uuid            | string  | Universally unique identifier (UUID) for backend event handling.                  |
 | timestamp       | integer | The date and time (UTC) of the event, formatted as YYYYMMDDhhmmss.                |
 | session_id      | string  | A unique ID identifying individual sessions.                                      |
-| group           | string  | A label ("a" or "b") assigned by us post-hoc.                                     |
+| group           | string  | A label ("a" or "b").                                     |
 | action          | string  | Identifies in which the event was created. See below.                             |
 | checkin         | integer | How many seconds the page has been open for.                                      |
 | page_id         | string  | A unique identifier for correlating page visits and check-ins.                    |
