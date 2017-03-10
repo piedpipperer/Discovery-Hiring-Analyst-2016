@@ -1,6 +1,6 @@
 # Data Analysis Task
 
-Task description and data for candidates applying to be a Data Analyst in the [Discovery department](1) at [Wikimedia Foundation](2).
+Task description and data for candidates applying to be a Data Analyst in the [Discovery department](https://www.mediawiki.org/wiki/Wikimedia_Discovery) at [Wikimedia Foundation](https://wikimediafoundation.org/wiki/Home).
 
 ## Background
 
@@ -27,7 +27,7 @@ You must create a **reproducible report**\* answering the following questions:
 
 ## Data
 
-The dataset comes from a [tracking schema](3) that we use for assessing user satisfaction. Desktop users are randomly sampled to be anonymously tracked by this schema which uses a "I'm alive" pinging system that we can use to estimate how long our users stay on the pages they visit. The dataset contains just a little more than a week of EL data.
+The dataset comes from a [tracking schema](https://meta.wikimedia.org/wiki/Schema:TestSearchSatisfaction2) that we use for assessing user satisfaction. Desktop users are randomly sampled to be anonymously tracked by this schema which uses a "I'm alive" pinging system that we can use to estimate how long our users stay on the pages they visit. The dataset contains just a little more than a week of EL data.
 
 | Column          | Value   | Description                                                                       |
 |:----------------|:--------|:----------------------------------------------------------------------------------|
@@ -59,7 +59,3 @@ The following are possible values for an event's action field:
 |2988d11968b25b29add3a851bec2fe02 | 20160305195342|001e61b5477f5efc |b     |checkin          |      40|5a6a1f75124cbf03 |        NA|               1|
 
 This user's search query returned 7 results, they clicked on the first result, and stayed on the page between 40 and 50 seconds. (The next check-in would have happened at 50s.)
-
-[1]: https://www.mediawiki.org/wiki/Wikimedia_Discovery
-[2]: https://wikimediafoundation.org/wiki/Home
-[3]: https://meta.wikimedia.org/wiki/Schema:TestSearchSatisfaction2
