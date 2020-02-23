@@ -63,7 +63,8 @@ pacman::p_load(readr, caret, plotly, ggplot2,
                corrplot, ggpubr, rpart
                , rpart.plot, gbm,boot,dplyr,
                reshape, Rserve, tidyverse, padr
-               , sqldf, lubridate,knitr)
+               , sqldf, lubridate,knitr
+               ,R.utils)
   
 
 
@@ -93,11 +94,22 @@ At the moment, the load of the file already includes 1st processing of the file 
 ```{r eval=TRUE, warning=FALSE}
 
 ## pending to change and get data from here + decompress it.: 
-downloaded_gz <- download.file('https://github.com/wikimedia-research/Discovery-Hiring-Analyst-2016/raw/master/events_log.csv.gz',
-              './events_log.csv.gz')
+files_list0 <- file.access( names = 'events_log.csv' 
+                           ,mode = 0)
 
-library(R.utils)
-gunzip("events_log.csv.gz", remove=FALSE)
+if (files_list0 < 0)
+{
+  files_list <- list.files( pattern = 'events_log.csv.gz' )
+  if (length(files_list)  < 1) 
+  {
+  downloaded_gz <- download.file('https://github.com/wikimedia-research/Discovery-Hiring-Analyst-2016/raw/master/events_log.csv.gz',
+              './events_log.csv.gz')
+  }
+    gunzip("events_log.csv.gz", remove=FALSE)
+}
+
+
+
 #### Load Data & 1st Processing ####
 eventsDf <- read.csv("events_log.csv"
          , header = T, sep = ","
