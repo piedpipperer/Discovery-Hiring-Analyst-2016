@@ -93,8 +93,11 @@ At the moment, the load of the file already includes 1st processing of the file 
 ```{r eval=TRUE, warning=FALSE}
 
 ## pending to change and get data from here + decompress it.: 
-https://github.com/wikimedia-research/Discovery-Hiring-Analyst-2016/blob/master/events_log.csv.gz
+downloaded_gz <- download.file('https://github.com/wikimedia-research/Discovery-Hiring-Analyst-2016/raw/master/events_log.csv.gz',
+              './events_log.csv.gz')
 
+library(R.utils)
+gunzip("events_log.csv.gz", remove=FALSE)
 #### Load Data & 1st Processing ####
 eventsDf <- read.csv("events_log.csv"
          , header = T, sep = ","
